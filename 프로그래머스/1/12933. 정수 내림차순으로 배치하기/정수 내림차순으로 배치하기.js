@@ -1,8 +1,10 @@
 function solution(n) {
-    n = String(n).split('');
-    n = n.sort((a,b)=>(b-a));
-    n = n.join('');
-    n = Number(n)
-    
-    return n; 
+    n = String(n).split("")
+    console.log(n)
+    n = n.sort((first, second) => (second - first));
+    console.log(n)
+    n = n.join("");
+    console.log(n)
+    n = Number(n);
+    return n;
 }

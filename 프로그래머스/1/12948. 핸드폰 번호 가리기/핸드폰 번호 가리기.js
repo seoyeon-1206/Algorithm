@@ -1,8 +1,16 @@
-function solution(phone_number) {
-    const n = phone_number.length
-    const arr = phone_number.split(''); //배열로 바꿈
-    for(let i=0; i<= n-5; i++){
-        arr[i] = "*";
+function solution (phone_number) {
+    for (let i=0; i<phone_number.length-4; i++){
+         phone_number = phone_number.replace(phone_number[i], "*")
+        console.log(phone_number)   
     }
-    return arr.join("");
+    return phone_number
 }
+
+
+
+
+
+
+
+
+

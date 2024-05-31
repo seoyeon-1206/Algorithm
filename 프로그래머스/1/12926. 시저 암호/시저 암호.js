@@ -1,11 +1,18 @@
 function solution(s, n) {
-    return s.split('').map((value) => {
-        if (value === ' ') {
-            return value;
+    var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var lower = "abcdefghijklmnopqrstuvwxyz";
+    var answer= '';
+    
+    for (let i=0; i<s.length; i++){
+        var word = s[i];
+        if (word === " ") {
+        answer += " ";
+        continue;
         }
-        let str = value.charCodeAt()
-        return value.toUpperCase().charCodeAt() + n > 90 ?
-            String.fromCharCode(str+n-26) :
-             String.fromCharCode(str+n)
-    }).join('');
+        var textArr = upper.includes(word) ? upper : lower;
+        let index = textArr.indexOf(word) + n ;
+        if (index >= textArr.length) index -= textArr.length;
+        answer += textArr[index] 
+    }
+    return answer 
 }

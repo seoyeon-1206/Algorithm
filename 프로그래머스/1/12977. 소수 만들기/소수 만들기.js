@@ -10,10 +10,20 @@ var answer = 0;
     return answer
 }
 
-    function isPrime(score) {
-    for (let i=2; i<score; i++) {
-        if(score % i === 0) return false
+function isPrime (sum) {
+    for (let i=2; i<sum; i++) {
+        if (sum % i === 0) return false
     }
-        return true
+    return true
 }
+
+
+
+
+
+
+
+
+
+
 

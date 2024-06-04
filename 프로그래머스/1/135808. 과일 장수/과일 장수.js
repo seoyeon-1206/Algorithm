@@ -1,12 +1,10 @@
 function solution(k, m, score) {
     var answer = 0;
-    var arr = []
-    const sortedScore = score.sort((a, b) => b-a) 
-    
-    for(let i=0; i+m<= sortedScore.length; i+=m){
-       answer += sortedScore[i+m-1] * m
-        
-    }
-   
-    return answer;
+    score.sort((a,b) => (b-a));
+    console.log(score)
+
+    for (let i=0; i+m <= score.length; i+= m) {
+        answer += (score[i+m-1]) * m
+    } 
+   return answer
 }

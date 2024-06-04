@@ -1,9 +1,10 @@
 function solution(a, b, n) {
+    // 받은 콜라 수 
     var answer = 0;
-    let bottle = n;
-    while(bottle >= a) {
-        answer += (Math.floor(bottle / a)) * b;
-        bottle = bottle - (Math.floor(bottle / a))*a + (Math.floor(bottle / a)) * b;
+
+    while (n >= a){
+       answer += Math.floor(n/a) * b
+       n = Math.floor(n/a) * b + (n%a)
     }
-    return answer;
+    return answer
 }

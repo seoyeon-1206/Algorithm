@@ -1,14 +1,13 @@
-function solution(d, budget) {
-    // 오름차순 정렬
+function solution (d, budget) {
     var answer = 0;
-    d = d.sort((a,b) => (a-b));
-
+    d = d.sort((a,b) => (a-b))
+    var num = 0;
     for (let i=0; i<d.length; i++) {
-        if (budget >= d[i]) {
-            budget -= d[i]
-            answer ++
+        num += d[i]
+        while(num <= budget) {
+            answer ++;
+            break;
         }
-        
     }
-    return answer
+    return answer;
 }

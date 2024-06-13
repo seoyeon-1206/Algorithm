@@ -1,11 +1,10 @@
 function solution(food) {
-    var answer = '';
-    let arr = [];
-    food.map((element, index) => {
-        if (element>1) {
-            arr.push(index.toString().repeat(Math.floor(element/2)))
+    var answer = "";
+    for(let i=1; i<food.length; i++) {
+        var repeatNum = Math.floor(food[i]/2);
+        if (repeatNum !== 0) {
+            answer += String(i).repeat(repeatNum)
         }
-    })
-    return arr.join('') + "0" + arr.reverse().join('')
-    
+    }
+   return answer + "0" + [...answer].reverse().join('')
 }

@@ -1,10 +1,18 @@
 n, m = map(int, input().split())
-arr = list(map(int, input().split()))
-max_sum = 0
-for i in range(n):
-    for j in range(i+1, n):
-        for k in range(j+1, n):
-            answer = arr[i]+arr[j]+arr[k]
-            if max_sum < answer & answer <= m:
-                max_sum = answer
-print(max_sum)
+cards = list(map(int, input().split()))
+path = [0]*3
+numbers = []
+
+def abc(level,start):
+    if level == 3:
+        Sum = sum(path)
+        if Sum <= m :
+            numbers.append(Sum)
+        return
+    for i in range(start, n):
+        path[level] = cards[i]
+        abc(level+1, i+1)
+
+abc(0,0)
+
+print(max(numbers))

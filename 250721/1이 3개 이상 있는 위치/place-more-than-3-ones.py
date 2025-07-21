@@ -7,7 +7,7 @@ cnt = 0
 
 def solution(x, y):
     count = 0
-    for d in range(n):
+    for d in range(4):
         nx = x + dx[d]
         ny = y + dy[d]
 
